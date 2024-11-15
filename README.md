@@ -19,7 +19,7 @@ This project is designed to implement a robust cloud architecture for hosting a 
 ---
 
 ## Architecture Diagram  
-![AWS Architecture Diagram](architecture-diagram.png)  
+![AWS-Cloud-Architecting-Project](Architecture_Diagram/Architecture.png)  
 *(Ensure to replace with the path to your architecture image file)*
 
 **Checklist:**  
