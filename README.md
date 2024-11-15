@@ -1,124 +1,106 @@
+
 # AWS-Cloud-Architecting-Project
-A repository for the final capstone project of the AWS Academy Cloud Architecting Course
-
-Here’s a **Markdown rubric** for this `README.md` file tailored to the Capstone Project final submission. This rubric will guide learners on structuring a comprehensive and professional `README.md` for your project repositories.
-
+A repository for the final capstone project of the AWS Academy Cloud Architecting Course.
 
 ## Introduction  
 ### 1. Project Title  
-- Provide a clear, descriptive, and professional title for your project.  
-
-**Example:**  
-`Cloud Architecting Capstone Project: Scalable High Availabity E-commerce Application`
+**Cloud Architecting Capstone Project: Scalable and Secure Research Data Platform**
 
 ---
 
 ### 2. Project Overview  
-- Summarize the project in 2-3 sentences. Include the purpose, high-level functionality, and key AWS services used.  
+This project is designed to implement a robust cloud architecture for hosting a research data platform that provides global development statistics. The platform ensures high availability, scalability, and secure data access, leveraging various AWS services for optimal performance.
 
 **Checklist:**  
-- [ ] What problem does this project solve?  
-- [ ] Why is this solution important?  
-- [ ] What is the primary AWS architecture implemented?
+- Solves the problem of a responsive and secure data platform for researchers.
+- Provides a scalable, cost-effective solution with automated scaling and redundancy.
+- Implements an architecture centered around Amazon EC2, RDS, and Elastic Load Balancing.
 
 ---
 
 ## Architecture Diagram  
-- Include a detailed architecture diagram of your solution. You can use tools like **Lucidchart**, **Draw.io**, or **AWS Architecture Diagramming Tool**.  
+![AWS Architecture Diagram](architecture-diagram.png)  
+*(Ensure to replace with the path to your architecture image file)*
 
 **Checklist:**  
-- [ ] Does the diagram include all key components (e.g., VPC, subnets, load balancers, EC2 instances, S3 buckets)?  
-- [ ] Are security services like IAM roles, security groups, and KMS indicated?  
-- [ ] Is the flow of data/workload clearly illustrated?  
+- The diagram includes key components: VPC, public/private subnets, ALB, EC2 instances, RDS, Secrets Manager.
+- Security measures like IAM roles and security groups are indicated.
+- Data flow between ALB, EC2 instances, and the database is illustrated.
 
 ---
 
 ## Features and Functionality  
 ### 1. Key Features  
-- List and briefly describe the primary features of your project.  
-
-**Example:**  
-- `Autoscaling`: Automatically adjusts the number of instances based on traffic.  
-- `Highly Available`: Built using multi-AZ deployment.  
-- `Cost Optimization`: Utilizes AWS pricing models such as Reserved Instances or Spot Instances.  
+- **Autoscaling**: Automatically scales EC2 instances based on traffic.
+- **High Availability**: Multi-AZ deployment for database and load-balanced EC2 instances.
+- **Security**: Integrated with AWS Secrets Manager for secure database credential handling.
 
 ### 2. AWS Services Used  
-- Provide a list of AWS services with a short explanation of their role in the project.  
-
-**Example:**  
-- `Amazon S3`: Stores static assets like images and files.  
-- `Amazon RDS`: Hosts the relational database for the application.
+- **Amazon VPC**: Isolated environment for hosting the application.
+- **Elastic Load Balancing (ALB)**: Routes traffic across multiple EC2 instances.
+- **Amazon EC2**: Hosts the PHP web application within private subnets.
+- **Amazon RDS (MySQL)**: Multi-AZ deployment for database availability.
+- **AWS Secrets Manager**: Securely stores and manages database credentials.
+- **IAM Roles and Policies**: Grants least-privilege access to resources.
 
 ---
 
 ## Deployment  
 ### 1. Prerequisites  
-- List any software, tools, or AWS configurations required to deploy the project.  
-
-**Example:**  
-- `AWS CLI` installed and configured.  
-- IAM user with admin privileges.  
+- **AWS CLI** installed and configured.
+- IAM user with sufficient privileges.
+- Access to PHP application code and the database dump file.
 
 ### 2. Step-by-Step Deployment Instructions  
-- Provide a clear, concise set of steps for deploying the project.  
+1. **Set up the VPC** and configure subnets.
+2. **Deploy Amazon RDS** with Multi-AZ and secure access.
+3. **Create an Application Load Balancer** in public subnets.
+4. **Launch EC2 instances** using an Auto Scaling Group.
+5. **Store and access credentials** with AWS Secrets Manager.
+6. **Configure security groups** for EC2 and RDS.
+7. **Test the application** using the load balancer URL.
 
 **Checklist:**  
-- [ ] Include instructions for launching CloudFormation templates or Terraform scripts (if applicable).  
-- [ ] Detail any manual configurations in the AWS Management Console.  
+- Include manual setup instructions in the AWS Management Console.
+- Use templates or scripts if applicable.
 
 ---
 
 ## Security  
-- Describe security measures implemented in your architecture.  
-
-**Example:**  
-- `IAM Roles`: Restrict access to resources based on least privilege.  
-- `Encryption`: S3 bucket encryption using SSE-KMS.  
-- `Network Security`: Configured security groups and NACLs.  
+- **IAM Roles**: Grant appropriate access with least-privilege principles.
+- **Secrets Manager**: Used to manage and access sensitive data securely.
+- **Network Security**: Configured security groups and NACLs to control inbound/outbound traffic.
 
 ---
 
 ## Testing and Validation  
 ### 1. Testing Strategy  
-- Describe how the project was tested, including tools used (e.g., Postman, AWS CloudWatch Logs).  
+- **Load Testing**: Conducted to verify autoscaling and application performance under load.
+- **Data Integrity**: Validated by running queries and comparing imported data with expected results.
 
 **Checklist:**  
-- [ ] What tests were conducted (e.g., load testing, failover testing)?  
-- [ ] Include commands, test cases, or examples.  
+- Commands or scripts for validation can be included.
+- Test cases such as failover or simulated load scenarios.
 
 ---
 
 ## Challenges and Learnings  
-- Reflect on any challenges faced during implementation and what you learned from them.  
-
-**Example:**  
-- Challenge: Setting up an ALB to route traffic between subnets.  
-- Learning: Gained hands-on experience with cross-zone load balancing.  
+- **Challenge**: Ensuring proper traffic routing through the ALB.
+- **Learning**: Improved understanding of cross-AZ traffic distribution and security group configurations.
 
 ---
 
 ## Future Improvements  
-- Suggest potential upgrades or optimizations for the project.  
-
-**Example:**  
-- Implement CI/CD using AWS CodePipeline.  
-- Enhance monitoring with Amazon CloudWatch Insights.
+- **CI/CD Integration**: Implement AWS CodePipeline for automated deployments.
+- **Enhanced Monitoring**: Use CloudWatch Insights for more detailed metrics and log analysis.
 
 ---
 
 ## Contributors  
-- List team members and their contributions.  
 
-**Example:**  
-`Jane Doe - Architecture Design, Documentation`  
-`John Smith - Deployment, Security Configuration`
+- **Manasses Mburu Mwituria** - Final implementation and deployment.
 
 ---
 
 ## License  
-- Include licensing information for your project (if applicable).  
-
-**Example:**  
 This project is licensed under the MIT License.
-
----
